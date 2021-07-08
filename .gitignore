@@ -1,3 +1,6 @@
 /.idea/
 /target/
 /build.properties
+/*.iml
+/src/main/liberty/config/bootstrap.properties
+/src/main/liberty/config/server.env

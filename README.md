@@ -24,7 +24,7 @@ unit and integration tests are run on pressing Enter in the command terminal; yo
 
 To launch the test page, open your browser at the following URL
 
-    http://localhost:9080/index.html  
+    http://localhost:9080/openapi/ui  
 
 
 

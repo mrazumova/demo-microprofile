@@ -3,7 +3,7 @@
 
     <featureManager>
         <feature>microProfile-4.0</feature>
-        
+        <feature>jpa-2.2</feature>
     </featureManager>
 
     <httpEndpoint id="defaultHttpEndpoint"
@@ -18,8 +18,20 @@
     <!-- This is the keystore that will be used by SSL and by JWT. -->
     <keyStore id="defaultKeyStore" location="public.jks" type="JKS" password="atbash" />
 
-
     <!-- The MP JWT configuration that injects the caller's JWT into a ResourceScoped bean for inspection. -->
     <mpJwt id="jwtUserConsumer" keyName="theKeyId" audiences="targetService" issuer="${jwt.issuer}"/>
 
+    <dataSource id="PostgresUnit" jndiName="jdbc/postgres">
+        <jdbcDriver libraryRef="PostgresLib"/>
+        <properties.postgresql
+                serverName="${DB_HOST}"
+                portNumber="${DB_PORT}"
+                databaseName="${DB_NAME}"
+                user="${DB_USER}"
+                password="${DB_PASS}"/>
+    </dataSource>
+
+    <library id="PostgresLib">
+        <fileset dir="{server.config.dir}/lib" includes="postgres*.jar"/>
+    </library>
 </server>
