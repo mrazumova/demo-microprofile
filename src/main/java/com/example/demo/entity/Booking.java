@@ -1,13 +1,22 @@
-package com.example.demo.openapi;
+package com.example.demo.entity;
 
 import org.eclipse.microprofile.openapi.annotations.media.Schema;
 
-@Schema(name="Booking")
+@Schema(name = "Booking")
 public class Booking {
+
     @Schema(required = true, description = "Booking id")
     private String id;
+
     @Schema(required = true, description = "Description of the destination")
     private Destination destination;
+
+    public static Booking booking(String id, Destination destination) {
+        Booking result = new Booking();
+        result.setId(id);
+        result.setDestination(destination);
+        return result;
+    }
 
     public String getId() {
         return id;
@@ -23,12 +32,5 @@ public class Booking {
 
     public void setDestination(Destination destination) {
         this.destination = destination;
-    }
-
-    public static Booking booking(String id, Destination destination) {
-        Booking result = new Booking();
-        result.setId(id);
-        result.setDestination(destination);
-        return result;
     }
 }

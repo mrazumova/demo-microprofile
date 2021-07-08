@@ -1,10 +1,17 @@
-package com.example.demo.openapi;
+package com.example.demo.entity;
 
 public class Destination {
 
     private String country;
 
     private String city;
+
+    public static Destination destination(String country, String city) {
+        Destination result = new Destination();
+        result.setCountry(country);
+        result.setCity(city);
+        return result;
+    }
 
     public String getCountry() {
         return country;
@@ -20,12 +27,5 @@ public class Destination {
 
     public void setCity(String city) {
         this.city = city;
-    }
-
-    public static Destination destination(String country, String city) {
-        Destination result = new Destination();
-        result.setCountry(country);
-        result.setCity(city);
-        return result;
     }
 }

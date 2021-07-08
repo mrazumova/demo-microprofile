@@ -1,5 +1,7 @@
-package com.example.demo.openapi;
+package com.example.demo.controller;
 
+import com.example.demo.entity.Booking;
+import com.example.demo.entity.Destination;
 import org.eclipse.microprofile.openapi.annotations.OpenAPIDefinition;
 import org.eclipse.microprofile.openapi.annotations.info.Info;
 import org.eclipse.microprofile.openapi.annotations.media.Content;
